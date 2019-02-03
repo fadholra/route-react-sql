@@ -1,4 +1,4 @@
-.App {
+#App {
   margin-left: 10px;
 }
 
@@ -32,7 +32,7 @@
 }
 
 h3 {
-  margin: 15px 0 7.5px 1% ;
+  margin: 15px 0 7.5px 1%;
 }
 
 .table {
@@ -51,22 +51,36 @@ h3 {
   width: 200px;
 }
 
-.input-add-update {
+input {
+  text-align: center;
+}
+
+#input-add-update {
   margin-left: 1%;
 }
 
 .input-add-no {
-    width: 31px;
+  width: 31px;
 }
 
 .input-add-perjalanan {
   margin-left: 4px;
   width: 200px;
-} 
+}
+
+.input-add-start-lat, .input-add-end-lat {
+  margin-top: 3px;
+  width: 115.5px;
+}
+
+.input-add-start-lon, .input-add-end-lon {
+  margin-left: 4px;
+  width: 115.5px;
+}
 
 button {
   border: none;
-  font-size: 0.75em;
+  font-size: 0.7em;
   width: 50px;
   text-align: center;
   margin-left: 7.5px;
@@ -90,30 +104,78 @@ button:hover {
 
 .btn-add {
   background-color: #3f51b5;
+  position: absolute;
+  height: 71px;
+  width: 80px;
 }
 
 .btn-update {
-  background-color: #5c6bc0;
+  background-color: #5c6bcf;
+  position: absolute;
+  margin-left: 94px;
+  height: 71px;
+  width: 80px;
 }
 
 .btn-route {
   background-color: #ff9800;
 }
 
-table {
-  font-family: arial, sans-serif;
-  font-size: 0.8em;
-  border-collapse: collapse;
-  width: 100%;
+#map {
+  margin: 1.5%;
+  height: 500px;
+  width: 65%;
+  top: 0;
+  right: 0;
+  position: absolute;
+  //visibility: hidden;
+}
+
+#waypoint h4 {
+  margin: 15px 0 7.5px 1% ;
+}
+
+.waypoint-input {
+  display: inline-block;
+  margin-top: 0;
   margin-left: 1%;
 }
 
-td, th {
-  border: 1px solid #dddddd;
-  text-align: center;
-  padding: 2px;
+.waypoint-input-lat, .waypoint-input-lon {
+  margin-left: 4px;
+  width: 140px;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+.waypoint-input-no {
+  width: 61px;
+}
+
+.btn-add-waypoint {
+  margin: 1px 4px;
+  display: inline-block;
+  position: absolute;
+  background-color: #3f51b5;
+}
+
+.waypoint-no {
+  width: 35px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.waypoint-lat {
+  margin-left: 30px;
+  display: inline-block;
+  width: 120px;
+}
+
+.waypoint-lon {
+  margin-left: 30px;
+  display: inline-block;
+  width: 120px;
+}
+
+.btn-delete-waypoint {
+  margin-left: 20px;
+  background-color: #e53935;
 }
