@@ -38,7 +38,7 @@ class App extends Component {
   }
 
   addPerjalanan(e) {
-    fetch(`http://localhost:4000/rute/add?no=${this.state.no}&perjalanan=${this.state.perjalanan}&start_lat=${this.state.startLat}&start_lon=${this.state.startLon}&end_lat=${this.state.endLat}&end_lon=${this.state.endLon}`)
+    fetch(`/rute/add?no=${this.state.no}&perjalanan=${this.state.perjalanan}&start_lat=${this.state.startLat}&start_lon=${this.state.startLon}&end_lat=${this.state.endLat}&end_lon=${this.state.endLon}`)
       .then(this.getPerjalanan)
       .catch(err => err);
   }
@@ -60,25 +60,25 @@ class App extends Component {
   updatePerjalanan(e) {
     var noUpdate = parseInt(this.state.noUpdate);
     var no = parseInt(this.state.no);
-    fetch(`http://localhost:4000/rute/update/${noUpdate}?no=${no}&perjalanan=${this.state.perjalanan}&start_lat=${this.state.startLat}&start_lon=${this.state.startLon}&end_lat=${this.state.endLat}&end_lon=${this.state.endLon}`)
+    fetch(`/rute/update/${noUpdate}?no=${no}&perjalanan=${this.state.perjalanan}&start_lat=${this.state.startLat}&start_lon=${this.state.startLon}&end_lat=${this.state.endLat}&end_lon=${this.state.endLon}`)
       .then(this.getPerjalanan)
       .catch(err => err);
   }
 
   deletePerjalanan(e) {
     var noDelete = e.target.value;
-    fetch(`http://localhost:4000/rute/delete/${noDelete}`)
+    fetch(`/rute/delete/${noDelete}`)
       .then(this.getPerjalanan)
       .catch(err => err);
   }
 
   getPerjalanan = () => {
-    fetch('http://localhost:4000/rute')
+    fetch('/rute')
       .then(response => response.json())
       .then(response => { 
         this.setState({ datas: response });
     });
-    fetch('http://localhost:4000/waypoints')
+    fetch('/waypoints')
       .then(response => response.json())
       .then(response => { 
         this.setState({ 
@@ -155,14 +155,14 @@ class App extends Component {
 
   addWaypoint = (e) => {
     var s = this.state;
-    fetch(`http://localhost:4000/waypoints/add?no_rute=${s.wayPointNo}&lat=${s.wayPointLat}&lon=${s.wayPointLon}`)
+    fetch(`/waypoints/add?no_rute=${s.wayPointNo}&lat=${s.wayPointLat}&lon=${s.wayPointLon}`)
       .then(this.getPerjalanan)
       .catch(err => err);
   }
 
   deleteWaypoint = (e) => {
     var idDelete = e.target.value;
-    fetch(`http://localhost:4000/waypoints/delete/${idDelete}`)
+    fetch(`/delete/${idDelete}`)
       .then(this.getPerjalanan)
       .catch(err => err);
   }
